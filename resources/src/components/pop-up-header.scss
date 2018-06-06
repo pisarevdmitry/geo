@@ -1,0 +1,22 @@
+.pop-up-header{
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #ff8663;
+  align-items: center;
+  padding: 13px;
+  border-radius: 12px 12px 0 0;
+}
+.pop-up-header__marker{
+  color: white;
+  font-size: 14px;
+}
+.pop-up-header__text{
+  color: #ffffff;
+  font-family:fira_sanslight,sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+.pop-up-header__btn{
+  margin-left: auto;
+}

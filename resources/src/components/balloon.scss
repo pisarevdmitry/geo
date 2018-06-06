@@ -1,0 +1,19 @@
+.balloon{
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+}
+.balloon_header{
+  margin-bottom: 10px;
+}
+.balloon_link{
+  text-decoration: none;
+}
+.balloon_body{
+  margin-top: 10px;
+}
+.balloon_footer{
+  align-self: flex-end;
+  margin-top: auto;
+  color: #7D7D7D
+}

@@ -1,0 +1,42 @@
+.feedback{
+  margin-top: 27px;
+  padding:12px;
+  border-top: 1px solid #f0f0f0;
+  }
+.feedback__title{
+
+  color: #ff8663;
+  font-family: fira_sansmedium;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.feedback-form{
+  width: 100%;
+  padding-top: 16px;
+  text-align: right;
+}
+.feedback-form__input,.feedback-form__textarea{
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  background-color: #ffffff;
+  outline: none;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 4px 14px;
+  font-family: fira_sansmedium;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+}
+.feedback-form__textarea{
+  height: 129px;
+  resize: none;
+}
+.feedback-form__input::placeholder,.feedback-form__input:-ms-input-placeholder,
+.feedback-form__textarea::placeholder,.feedback-form__textarea:-ms-input-placeholder{
+  color: #9f9f9f;
+}
+.message{
+  color: red;
+  text-align: center;
+}

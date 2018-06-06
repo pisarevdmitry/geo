@@ -1,0 +1,33 @@
+.pop-up-comments-list{
+  padding: 15px 12px 0 12px;
+  height: 150px;
+  overflow-y: auto;
+
+}
+.comment{
+  margin-bottom:15px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+.comment__user-name{
+  color: #4f4f4f;
+  font-family: fira_sansmedium;
+  font-weight: 500;
+  margin-right: 11px;
+}
+.comment__place,.comment__date{
+   opacity: 0.75;
+  color: #4f4f4f;
+  font-family: fira_sansmedium;
+  font-size: 16px;
+  font-weight: 400;
+}
+.comment__text{
+  padding-top: 14px;
+  color: #4f4f4f;
+  font-family: "Fira Sans";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+}

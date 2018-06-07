@@ -24,7 +24,7 @@ The Lumen framework is open-sourced software licensed under the [MIT license](ht
 
 установка:
 1. git clone
-2. compose install
+2. composer install
 3. Установить настройки БД в файл .env
 4. php artisan migrate
 4. php -S localhost:8000 -t public

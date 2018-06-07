@@ -8,7 +8,6 @@ use Illuminate\View\View;
 class Controller extends BaseController
 {
     public function index() {
-        //View::addExtension('html', 'php');
         return view('index');
     }
 }

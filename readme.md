@@ -20,10 +20,11 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 
 The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
-##Проект ГеоОтзыв
+## Проект ГеоОтзыв
 
 установка:
 1. git clone
 2. compose install
 3. Установить настройки БД в файл .env
+4. php artisan migrate
 4. php -S localhost:8000 -t public

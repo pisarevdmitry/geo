@@ -67,6 +67,7 @@ export default class App {
         console.log(e.get('target'))
         let address;
         let coords = e.get('domEvent').originalEvent;
+
         this.popup.style.left = `${this.calaculatePopUp(coords.pageX, this.width)}px`;
         if(placemark) {
             address = {address: e.get('target').properties._data.balloonContentLink}
@@ -93,6 +94,7 @@ export default class App {
         e.preventDefault();
         let arr = [this.addPost.elements.author, this.addPost.elements.place, this.addPost.elements.content];
         let res = this.validate(arr);
+
         if (!res) {
             document.querySelector('.message').innerText = 'Заполните все поля';
             return
@@ -152,6 +154,7 @@ export default class App {
         let hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
         let minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
         let seconds = date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds();
+
         return `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`
     }
 

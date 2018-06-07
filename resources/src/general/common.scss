@@ -6,7 +6,7 @@ body{
   line-height: 1.42;
 }
 .wrapper{
-  width: 100%;
+  min-width: 1200px;
   height: 100vh;
   position: relative;
   overflow: hidden;

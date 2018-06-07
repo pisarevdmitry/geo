@@ -10,7 +10,7 @@ export default class App {
         this.Model = new Model;
         this.popup = document.querySelector('.pop-up');
         this.popupHeader = document.querySelector('.pop-up-header');
-        this.width = window.innerWidth;
+        this.width = window.innerWidth < 1200 ? 1200 : window.innerWidth;
         this.addPost = document.querySelector('.feedback-form');
         this.onMapClick = this.onMapClick.bind(this);
         this.onPlacemarkClick = this.onPlacemarkClick.bind(this);
@@ -37,7 +37,8 @@ export default class App {
             if (e.target.tagName === 'BUTTON') this.popup.classList.add('hidden')
         });
         this.addPost.addEventListener('submit', this.onSubmit);
-        document.addEventListener('click', this.onClusterClick)
+        document.addEventListener('click', this.onClusterClick);
+        window.addEventListener("resize", () => this.width = window.innerWidth < 1200 ? 1200 : window.innerWidth);
     }
      // обработчик при клике на карту
      onMapClick(e) {
@@ -53,7 +54,7 @@ export default class App {
     onClusterClick(e) {
         if(e.target.classList.contains('balloon_link')) {
             e.preventDefault();
-            console.log('click');
+            this.popup.style.left = `${this.calaculatePopUp(e.pageX, this.width)}px`;
             let address = e.target.innerText;
             this.View.render(adressTemplate, {address}, this.popupHeader);
             let posts = this.filterData(address);
@@ -64,7 +65,6 @@ export default class App {
     }
     // показ всплывабщего окна
    async showPopup(e, placemark){
-        console.log(e.get('target'))
         let address;
         let coords = e.get('domEvent').originalEvent;
 

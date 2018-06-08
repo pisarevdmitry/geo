@@ -376,7 +376,7 @@ template {
 .pop-up {
   position: absolute;
   top: 15%;
-  max-width: 385px;
+  width: 385px;
   min-height: 527px;
   z-index: 5;
   background-color: #ffffff; }
@@ -472,7 +472,8 @@ template {
   font-family: "Fira Sans";
   font-size: 15px;
   font-weight: 400;
-  line-height: 22px; }
+  line-height: 22px;
+  word-break: normal; }
 .balloon {
   display: flex;
   flex-direction: column;
@@ -539,7 +540,7 @@ body {
   line-height: 1.42; }
 
 .wrapper {
-  min-width: 1200px;
+  min-width: 600px;
   height: 100vh;
   position: relative;
   overflow: hidden; }

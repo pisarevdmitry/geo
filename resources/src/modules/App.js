@@ -10,7 +10,7 @@ export default class App {
         this.Model = new Model;
         this.popup = document.querySelector('.pop-up');
         this.popupHeader = document.querySelector('.pop-up-header');
-        this.width = window.innerWidth < 1200 ? 1200 : window.innerWidth;
+        this.width = window.innerWidth < 600 ? 600 : window.innerWidth;
         this.addPost = document.querySelector('.feedback-form');
         this.onMapClick = this.onMapClick.bind(this);
         this.onPlacemarkClick = this.onPlacemarkClick.bind(this);
@@ -38,7 +38,7 @@ export default class App {
         });
         this.addPost.addEventListener('submit', this.onSubmit);
         document.addEventListener('click', this.onClusterClick);
-        window.addEventListener("resize", () => this.width = window.innerWidth < 1200 ? 1200 : window.innerWidth);
+        window.addEventListener("resize", () => this.width = window.innerWidth < 600 ? 600 : window.innerWidth);
     }
      // обработчик при клике на карту
      onMapClick(e) {
@@ -58,7 +58,6 @@ export default class App {
             let address = e.target.innerText;
             this.View.render(adressTemplate, {address}, this.popupHeader);
             let posts = this.filterData(address);
-            console.log(posts,this.data);
             this.View.render(postsTempate, {items: posts}, document.querySelector('.pop-up-comments-list'));
             this.popup.classList.remove('hidden')
         }
@@ -78,15 +77,13 @@ export default class App {
         }
         this.View.render(adressTemplate, address, this.popupHeader);
         let posts = this.filterData(address.address);
-        console.log(posts,this.data);
         this.View.render(postsTempate, {items: posts}, document.querySelector('.pop-up-comments-list'));
         this.popup.classList.remove('hidden')
     }
      // расчет места появления
     calaculatePopUp(pageX, width) {
-        if (pageX >= width / 2) {
-            return (width / 2) * 0.2;
-        }
+        if(width < 1000 ||pageX >= width / 2) return (width / 2) * 0.2;
+
         return (width / 2) + (width / 2) * 0.2
     }
      // обработчик для добавления маркера

@@ -1,5 +1,4 @@
 let webpack = require('webpack');
-let HtmlPlugin = require('html-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let rules = require('./webpack.config.rules')();
@@ -37,11 +36,6 @@ module.exports = {
             }
         }),
         new ExtractTextPlugin('styles.css'),
-        /*new HtmlPlugin({
-            title: 'GeoOtziv',
-            template: 'index.html',
-            filename : './../resources/views/index.blade.php'
-        }),*/
         new CleanWebpackPlugin(['dist'])
     ],
     watchOptions: {

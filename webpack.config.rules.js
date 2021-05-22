@@ -3,7 +3,10 @@ module.exports = function() {
         {
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env']
+              }
         },
         {
             test: /\.hbs/,
@@ -11,15 +14,24 @@ module.exports = function() {
         },
         {
             test: /\.(jpe?g|png|gif)$/i,
-            loader: 'file-loader?name=images/[hash].[ext]'
+            loader: 'file-loader',
+            options: {
+                name: 'images/[hash].[ext]',
+              },
         },
         {
             test: /\.(svg)$/i,
-            loader: 'file-loader?name=images/[name].[ext]'
+            loader: 'file-loader',
+            options: {
+                name: 'images/[name].[ext]',
+              },
         },
         {
             test: /\.(eot|ttf|woff|woff2)$/,
-            loader: 'file-loader?name=fonts/[hash].[ext]'
+            loader: 'file-loader',
+            options: {
+                name: 'fonts/[hash].[ext]',
+              },
         }
     ];
 };

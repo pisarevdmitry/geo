@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   <link rel="stylesheet" href="dist/styles.css">
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey={{env('YANDEX_API_KEY')}}&lang=ru_RU" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
   <title>ГЕООТЗЫВ</title>
  </head>
@@ -18,25 +18,25 @@
         <div class="pop-up hidden">
             <div class="pop-up-header">
                 <i class="fas fa-map-marker-alt pop-up-header__marker"></i>
-                <span class="pop-up-header__text">Невский пр., 78, Санкт-Петербург, 191025</span>
+                <span class="pop-up-header__text"></span>
                 <button class="btn btn-small btn-cross btn-white pop-up-header__btn "></button>
             </div>
             <ul class="pop-up-comments-list">
                 <li class="comment">
                     <div class="comment__info">
-                        <span class="comment__user-name">svetlana</span>
-                        <span class="comment__place">Шоколадница</span>
-                        <span class="comment__date">13.12.2015</span>
+                        <span class="comment__user-name"></span>
+                        <span class="comment__place"></span>
+                        <span class="comment__date"></span>
                     </div>
-                    <p class="comment__text">Очень хорошее место!</p>
+                    <p class="comment__text"></p>
                 </li>
                 <li class="comment">
                     <div class="comment__info">
-                        <span class="comment__user-name">Сергей Мелюков</span>
-                        <span class="comment__place">Красный куб </span>
-                        <span class="comment__date">12.12.2015</span>
+                        <span class="comment__user-name"></span>
+                        <span class="comment__place"></span>
+                        <span class="comment__date"></span>
                     </div>
-                    <p class="comment__text">Ужасное место! Кругом зомби!!!!</p>
+                    <p class="comment__text"></p>
                 </li>
             </ul>
             <div class="feedback">

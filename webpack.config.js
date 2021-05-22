@@ -1,21 +1,17 @@
-let webpack = require('webpack');
-let CleanWebpackPlugin = require('clean-webpack-plugin');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let rules = require('./webpack.config.rules')();
-let path = require('path');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const rules = require('./webpack.config.rules')();
+const path = require('path');
 
 rules.push({
     test: /\.scss$/,
-    use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: ['css-loader', 'sass-loader']
-    })
+    use:[MiniCssExtractPlugin.loader,'css-loader', 'sass-loader'],
+    
 }, {
     test: /\.css$/,
-    use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: 'css-loader'
-    })
+    use:[MiniCssExtractPlugin.loader,'css-loader']
+    
 });
 
 module.exports = {
@@ -27,16 +23,15 @@ module.exports = {
     },
     devtool: 'source-map',
     module: { rules },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+      },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                drop_debugger: false,
-                warnings: false
-            }
+        new MiniCssExtractPlugin({
+            filename: 'styles.css'
         }),
-        new ExtractTextPlugin('styles.css'),
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin()
     ],
     watchOptions: {
         aggregateTimeout: 100,

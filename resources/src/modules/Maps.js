@@ -60,10 +60,13 @@ export default  class Maps{
     }
     getCoords(address){
         return ymaps.geocode(address)
+        .then(result => {
+            return result.geoObjects.get(0).geometry._coordinates
+        })
     }
     createPlacemark(coords, {date, place, content, address}){
-        console.log(content);
-        let placemark =new ymaps.Placemark(coords.reverse(), {
+        console.log(coords,content, 'coordsб ',coords);
+        let placemark =new ymaps.Placemark(coords, {
             balloonContentHeader: place,
             balloonContentLink: address,
             balloonContentBody: content,

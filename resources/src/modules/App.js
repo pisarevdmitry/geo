@@ -131,12 +131,10 @@ export default class App {
     }
     // добавление маркера
     renderPlacemarks(address, data) {
-        this.YMap.getCoords(address)
+       const test = this.YMap.getCoords(address)
             .then(result => {
-                let coords = result.geoObjects.get(0).properties.get('metaDataProperty').GeocoderMetaData
-                    .InternalToponymInfo.Point.coordinates;
-                this.YMap.createPlacemark(coords, data);
-            })
+               this.YMap.createPlacemark(result, data);
+           })
     }
     filterData(address){
         return this.data.filter(item => {
